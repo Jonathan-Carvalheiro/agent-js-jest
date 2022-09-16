@@ -1,11 +1,11 @@
-# @reportportal/agent-js-jest
+# jonathan-rp-agent-js-jest
 
 A Jest reporter that uploads the results to a [ReportPortal](http://reportportal.io/) server.
 
 ## Installation
 
 ```shell
-npm install --save-dev @reportportal/agent-js-jest
+npm install --save-dev onathan-rp-agent-js-jest
 ```
 
 ## Usage
@@ -76,16 +76,19 @@ module.exports = {
     ]
     ...
 ```
-
+You can disable it adding `"enabled": false` as an configuration.
 It's possible by using environment variables, it's important to mention that environment variables has precedence over `package.json` definition.
 
 ```shell
+$ export RP_ENABLED=false
 $ export RP_TOKEN=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 $ export RP_PROJECT_NAME=MY_AWESOME_PROJECT
 $ export RP_ENDPOINT=MY_RP_ENDPOINT
 $ export RP_LAUNCH=MY_COOL_LAUNCHER
+$ export RP_DESCRIPTION=RP_DESCRIPTION
 $ export RP_ATTRIBUTES=key:value,key:value,value
 $ export RP_LAUNCH_ID=EXIST_LAUNCH_ID
+$ export RP_MODE=DEBUG
 ```
 
 This for your convenience in case you has a continuous job that run your tests and may post the results pointing to a different Report Portal definition of project, launcher name or tags.
